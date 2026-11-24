@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/trendjr";
 
 // Frontend origins allowed to call the API (comma-separated CORS_ORIGIN in .env)
-const CORS_ORIGINS = (process.env.CORS_ORIGIN || "http://localhost:5173,http://127.0.0.1:5173")
+const CORS_ORIGINS = (process.env.CORS_ORIGIN || "https://trendjr-front.onrender.com")
   .split(",")
   .map((origin) => origin.trim())
   .filter(Boolean);
