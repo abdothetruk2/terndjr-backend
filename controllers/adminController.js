@@ -2,6 +2,7 @@ const Order = require("../modules/order");
 const Product = require("../modules/product");
 const User = require("../modules/user");
 const httpError = require("../utils/httpError");
+const { STOCK_COUNT_FIELDS } = require("../utils/inventory");
 
 const PERIODS = [7, 30, 90];
 const NOT_CANCELLED = { status: { $ne: "cancelled" } };
@@ -96,7 +97,7 @@ async function getStats(req, res) {
           _id: null,
           total: { $sum: 1 },
           active: { $sum: { $cond: [{ $ne: ["$is_active", false] }, 1, 0] } },
-          lowStock: { $sum: { $cond: [{ $and: [{ $gt: ["$stock", 0] }, { $lte: ["$stock", 5] }] }, 1, 0] } },
+          ...STOCK_COUNT_FIELDS,
         },
       },
     ]),
@@ -158,7 +159,7 @@ async function getStats(req, res) {
   const ordersByStatus = Object.fromEntries(Order.schema.path("status").enumValues.map((s) => [s, 0]));
   for (const row of ordersByStatusRows) ordersByStatus[row._id] = row.n;
   const totalOrders = Object.values(ordersByStatus).reduce((a, b) => a + b, 0);
-  const products = productRows[0] || { total: 0, active: 0, lowStock: 0 };
+  const products = productRows[0] || { total: 0, active: 0, tracked: 0, lowStock: 0, outOfStock: 0 };
 
   res.json({
     range: { days, timeZone, from: keys[0], to: keys[keys.length - 1] },
@@ -171,6 +172,8 @@ async function getStats(req, res) {
       activeProducts: products.active,
       hiddenProducts: products.total - products.active,
       lowStockProducts: products.lowStock,
+      outOfStockProducts: products.outOfStock,
+      untrackedProducts: products.total - products.tracked,
       customers,
     },
     period: {
@@ -207,4 +210,21 @@ async function getStats(req, res) {
   });
 }
 
-module.exports = { getStats };
+// GET /api/admin/inventory/summary
+// Product counts by stock state for the Inventory page (same rules as the store)
+async function getInventorySummary(req, res) {
+  const [row] = await Product.aggregate([{ $group: { _id: null, total: { $sum: 1 }, ...STOCK_COUNT_FIELDS } }]);
+  const summary = row || { total: 0, tracked: 0, outOfStock: 0, lowStock: 0, unitsInStock: 0, unitsSold: 0 };
+  res.json({
+    total: summary.total,
+    tracked: summary.tracked,
+    untracked: summary.total - summary.tracked,
+    inStock: summary.tracked - summary.outOfStock,
+    lowStock: summary.lowStock,
+    outOfStock: summary.outOfStock,
+    unitsInStock: summary.unitsInStock,
+    unitsSold: summary.unitsSold,
+  });
+}
+
+module.exports = { getStats, getInventorySummary };

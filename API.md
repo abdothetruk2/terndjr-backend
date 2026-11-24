@@ -195,6 +195,7 @@ the `X-Total-Count` response header (exposed to the browser through CORS).
   "reviews_count": 10,
   "stock": 50,
   "image": "https://...",
+  "images": ["https://...", "media/photo-2.jpg"],
   "category": "skin-care",
   "tags": ["category-request:skin-care", "..."],
   "featured": false,
@@ -208,7 +209,8 @@ the `X-Total-Count` response header (exposed to the browser through CORS).
 
 Note: `price`, `old_price` and `rating` are **strings**.
 `category` is only present on products whose category was set through the API; imported products
-use the `category-request:<slug>` tag. `tags` is either a list of texts or an object with import details.
+use the `category-request:<slug>` tag. `images` (extra gallery photos shown after `image`) is only
+present on products that have more than one photo. `tags` is either a list of texts or an object with import details.
 
 ### POST `/products`
 
@@ -225,6 +227,7 @@ Body: fields from the product object above. Validation:
 | `slug` | lowercase letters, numbers and single hyphens; generated from the English name when omitted |
 | `sku` | optional, unique, max 64 characters |
 | `image` | an `http(s)://` URL, or a `media/…` or `uploads/…` path |
+| `images` | list of up to 12 extra photos, each like `image` (empty entries and repeats are dropped); `[]` or `null` removes them |
 | `category` | slug of an existing category, or `null` |
 | `featured`, `flash_sale`, `is_active` | `true` / `false` |
 

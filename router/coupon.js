@@ -8,11 +8,13 @@ const {
   validateCoupon,
 } = require("../controllers/couponController");
 const { protect, admin } = require("../middleware/auth");
+const rateLimit = require("../utils/rateLimit");
 
 const router = express.Router();
 
 // Any signed-in customer can check a code before placing an order
-router.post("/validate", protect, validateCoupon);
+// (limited, so codes can't be guessed by trying thousands of them)
+router.post("/validate", protect, rateLimit({ windowMs: 10 * 60 * 1000, max: 40, message: "Too many coupon attempts. Please wait a few minutes." }), validateCoupon);
 
 // Everything else is admin-only
 router.use(protect, admin);

@@ -18,11 +18,20 @@ const orderSchema = new mongoose.Schema({
   // Products snapshot
   items: [
     {
+      // The product's _id as stored: imported catalog products have numeric
+      // _ids, products created in the admin have ObjectIds
       product: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.Mixed,
         ref: "Product",
         required: true
       },
+
+      // Public numeric id and slug at order time (for links from the order pages)
+      productId: Number,
+      slug: String,
+
+      // Whether this line reserved stock (so cancelling gives exactly that back)
+      tracked: { type: Boolean, default: false },
 
       name: {
         type: mongoose.Schema.Types.Mixed,

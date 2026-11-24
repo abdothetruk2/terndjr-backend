@@ -34,7 +34,18 @@ const productSchema = new mongoose.Schema(
 
     stock: { type: Number, default: 0, min: 0 },
 
+    // true: orders are limited by `stock` and reduce it; false: sold without a
+    // stock limit. Unset: tracked only when stock > 0 (see utils/inventory.js).
+    track_inventory: { type: Boolean },
+
+    // Units sold in orders that were not cancelled (kept up to date by the order code)
+    sold_count: { type: Number, default: 0, min: 0 },
+
     image: String,
+
+    // Extra gallery photos shown after `image` on the product page (same path
+    // formats as `image`). Left unset on products that have only one photo.
+    images: { type: [String], default: undefined },
 
     // Category slug set from the admin dashboard. Imported products are linked
     // through "category-request:<slug>" entries in `tags` instead; the product

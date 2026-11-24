@@ -9,6 +9,7 @@ const orderRoutes = require("./router/order");
 const categoryRoutes = require("./router/category");
 const couponRoutes = require("./router/coupon");
 const adminRoutes = require("./router/admin");
+const newsletterRoutes = require("./router/newsletter");
 const { UPLOAD_DIR } = require("./controllers/uploadController");
 const cors = require("cors");
 const PORT = process.env.PORT || 3000;
@@ -27,6 +28,12 @@ if (!process.env.JWT_SECRET) {
 
 const app = express();
 
+// Render (like most hosts) runs the app behind a proxy. Trusting it makes req.ip
+// the visitor's address, which the rate limits rely on. TRUST_PROXY overrides it
+// (a hop count such as "2", or "false" to turn it off).
+const trustProxy = process.env.TRUST_PROXY ?? (process.env.RENDER ? "1" : "false");
+if (trustProxy !== "false") app.set("trust proxy", /^\d+$/.test(trustProxy) ? Number(trustProxy) : trustProxy);
+
 app.use(cors({
   origin: CORS_ORIGINS,
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
@@ -44,6 +51,7 @@ app.use("/api/orders", orderRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/coupons", couponRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/newsletter", newsletterRoutes);
 
 // Images uploaded from the admin dashboard (POST /api/admin/uploads)
 app.use("/uploads", express.static(UPLOAD_DIR, {

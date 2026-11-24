@@ -82,16 +82,16 @@ async function login(req, res) {
     throw httpError(400, "username and password are required");
   }
 
-  loginLimiter.assertAllowed(req);
+  loginLimiter.assertAllowed(req, username);
 
   const user = await User.findOne({ username }).select("+password");
 
   // Same message for both cases so attackers can't discover valid usernames
   if (!user || !(await bcrypt.compare(password, user.password))) {
-    loginLimiter.recordFailure(req);
+    loginLimiter.recordFailure(req, username);
     throw httpError(401, "Invalid username or password");
   }
-  loginLimiter.clear(req);
+  loginLimiter.clear(req, username);
 
   if (user.isBlocked) throw httpError(403, "This account has been blocked");
 
@@ -112,11 +112,31 @@ async function me(req, res) {
   res.json({ user: publicUser(req.user) });
 }
 
+// Saved delivery address: every field optional text; null/{} clears it
+function cleanAddress(value) {
+  if (value === null) return [];
+  if (typeof value !== "object" || Array.isArray(value)) throw httpError(400, "address must be an object");
+  const limits = { fullName: 100, phone: 30, street: 200, city: 100, postalCode: 20, country: 60 };
+  const out = {};
+  for (const [field, max] of Object.entries(limits)) {
+    const raw = value[field];
+    if (raw === undefined || raw === null || raw === "") continue;
+    if (typeof raw !== "string") throw httpError(400, `address.${field} must be text`);
+    const clean = raw.trim();
+    if (clean.length > max) throw httpError(400, `address.${field} must be at most ${max} characters`);
+    if (clean) out[field] = clean;
+  }
+  return Object.keys(out).length ? [out] : [];
+}
+
 // PATCH /api/auth/me   (protected)
-// Updates the logged-in user's own contact details: { email?, phone? }
+// Updates the logged-in user's own details: { email?, phone?, address? }
+// `address` ({ fullName, phone, street, city, postalCode, country }) is the saved
+// delivery address that pre-fills checkout.
 async function updateMe(req, res) {
-  const { email, phone } = req.body ?? {};
+  const { email, phone, address } = req.body ?? {};
   assertStrings({ email, phone });
+  const addresses = address !== undefined ? cleanAddress(address) : undefined;
 
   const updates = {};
   if (email !== undefined) {
@@ -133,6 +153,7 @@ async function updateMe(req, res) {
     if (clean && !/^[+\d][\d\s()./-]{3,29}$/.test(clean)) throw httpError(400, "Please enter a valid phone number");
     updates.phone = clean || null;
   }
+  if (addresses !== undefined) updates.addresses = addresses;
   if (Object.keys(updates).length === 0) throw httpError(400, "No valid fields to update");
 
   const user = await User.findByIdAndUpdate(req.user._id, { $set: updates }, { returnDocument: "after", runValidators: true });

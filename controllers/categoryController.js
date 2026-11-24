@@ -78,14 +78,20 @@ async function cleanCategoryInput(body, { partial, current = null }) {
   return out;
 }
 
-// GET /api/categories
+// GET /api/categories            (?counts=true adds productCount: visible products,
+// sub-categories counted on their own; the store adds children to their parent)
 async function getCategories(req, res) {
   // Imported categories use `is_active`, ones created through the API use `isActive`
-  const categories = await Category.find({
+  const query = Category.find({
     is_active: { $ne: false },
     isActive: { $ne: false },
   }).sort({ name: 1 });
-  res.json(categories);
+
+  if (req.query.counts === "true") {
+    const [categories, counts] = await Promise.all([query, productCounts({ visibleOnly: true })]);
+    return res.json(categories.map((c) => ({ ...c.toJSON(), productCount: counts.get(c.slug) || 0 })));
+  }
+  res.json(await query);
 }
 
 // GET /api/categories/:id
@@ -96,19 +102,19 @@ async function getCategory(req, res) {
   res.json(category);
 }
 
-// GET /api/admin/categories   (admin)
-// Every category (hidden ones too) with its number of products.
-async function getAdminCategories(req, res) {
-  const [categories, tagCounts, fieldCounts] = await Promise.all([
-    Category.find().sort({ sort_order: 1, slug: 1 }).lean(),
+// Products per category slug, through the `category` field or the imported
+// "category-request:<slug>" tag. visibleOnly: count only products shown in the store.
+async function productCounts({ visibleOnly = false } = {}) {
+  const visible = visibleOnly ? { is_active: { $ne: false } } : {};
+  const [tagCounts, fieldCounts] = await Promise.all([
     Product.aggregate([
-      { $match: { tags: { $type: "array" } } },
+      { $match: { ...visible, tags: { $type: "array" } } },
       { $unwind: "$tags" },
       { $match: { tags: { $regex: `^${CATEGORY_TAG}` } } },
       { $group: { _id: "$tags", n: { $sum: 1 } } },
     ]),
     Product.aggregate([
-      { $match: { category: { $nin: [null, ""] } } },
+      { $match: { ...visible, category: { $nin: [null, ""] } } },
       { $group: { _id: "$category", n: { $sum: 1 } } },
     ]),
   ]);
@@ -119,7 +125,16 @@ async function getAdminCategories(req, res) {
     counts.set(slug, (counts.get(slug) || 0) + n);
   }
   for (const { _id, n } of fieldCounts) counts.set(_id, (counts.get(_id) || 0) + n);
+  return counts;
+}
 
+// GET /api/admin/categories   (admin)
+// Every category (hidden ones too) with its number of products.
+async function getAdminCategories(req, res) {
+  const [categories, counts] = await Promise.all([
+    Category.find().sort({ sort_order: 1, slug: 1 }).lean(),
+    productCounts(),
+  ]);
   res.json(categories.map((c) => ({ ...c, isActive: isActive(c), productCount: counts.get(c.slug) || 0 })));
 }
 

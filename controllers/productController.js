@@ -3,6 +3,7 @@ const Product = require("../modules/product");
 const Category = require("../modules/category");
 const httpError = require("../utils/httpError");
 const v = require("../utils/validate");
+const { STOCK_FILTERS } = require("../utils/inventory");
 
 const DEFAULT_LIMIT = 20;
 const MAX_LIMIT = 100;
@@ -31,6 +32,7 @@ const ADMIN_SORTS = {
   "name-asc": { "name.en": 1, id: 1 },
   "stock-asc": { stock: 1, id: 1 },
   "stock-desc": { stock: -1, id: 1 },
+  "sold-desc": { sold_count: -1, id: -1 },
 };
 
 const round2 = (n) => Math.round(n * 100) / 100;
@@ -110,6 +112,26 @@ function cleanTags(value) {
   throw httpError(400, "tags must be a list or an object");
 }
 
+const MAX_IMAGES = 12;
+
+// Gallery photos: a list of image paths/URLs (empty strings and repeats dropped)
+function cleanImages(value) {
+  if (value === null) return [];
+  if (!Array.isArray(value)) throw httpError(400, "images must be a list of image paths");
+  const list = [];
+  for (const item of value) {
+    if (typeof item !== "string") throw httpError(400, "images must be a list of image paths");
+    const image = item.trim();
+    if (!image) continue;
+    if (image.length > 1000 || !IMAGE_PATTERN.test(image)) {
+      throw httpError(400, "each image must be an http(s) URL or a media/ or uploads/ path");
+    }
+    if (!list.includes(image)) list.push(image);
+  }
+  if (list.length > MAX_IMAGES) throw httpError(400, `images can hold at most ${MAX_IMAGES} photos`);
+  return list;
+}
+
 // Validates a create/update body and returns only known, cleaned fields.
 // partial = true for updates (nothing is required).
 async function cleanProductInput(body, { partial }) {
@@ -155,7 +177,8 @@ async function cleanProductInput(body, { partial }) {
     }
     out.image = image;
   }
-  for (const flag of ["featured", "flash_sale", "is_active"]) {
+  if (body.images !== undefined) out.images = cleanImages(body.images);
+  for (const flag of ["featured", "flash_sale", "is_active", "track_inventory"]) {
     const value = v.boolean(body[flag], flag);
     if (value !== undefined) out[flag] = value;
   }
@@ -180,11 +203,19 @@ async function uniqueSlug(base, id) {
 }
 
 // GET /api/products?brand=&featured=true&search=
-//   &category=&discounted=true&maxPrice=&sort=&page=&limit=
+//   &category=&discounted=true&maxPrice=&ids=&sort=&page=&limit=
 async function getAllProducts(req, res) {
-  const { brand, featured, search, category, discounted, maxPrice, sort, page, limit } = req.query;
+  const { brand, featured, search, category, discounted, maxPrice, ids, sort, page, limit } = req.query;
   const filter = { is_active: { $ne: false } };
 
+  // ?ids=12,15,40 -> only these products (the cart refreshes its prices with it)
+  if (ids !== undefined) {
+    const list = String(ids).split(",").map((s) => s.trim()).filter(Boolean);
+    if (list.length === 0 || list.length > MAX_LIMIT || list.some((s) => !/^\d{1,12}$/.test(s))) {
+      throw httpError(400, `ids must be a comma-separated list of up to ${MAX_LIMIT} product ids`);
+    }
+    filter.id = { $in: list.map(Number) };
+  }
   if (brand) filter.brand = String(brand);
   if (featured !== undefined) filter.featured = featured === "true";
   if (search) {
@@ -240,7 +271,9 @@ async function getOneProduct(req, res) {
 async function getAdminProducts(req, res) {
   const { search, category } = req.query;
   const status = v.oneOf(req.query.status, "status", ["active", "inactive"]);
-  const stock = v.oneOf(req.query.stock, "stock", ["in", "low", "none"]);
+  // "none" is the old name of "out"
+  const stockParam = req.query.stock === "none" ? "out" : req.query.stock;
+  const stock = v.oneOf(stockParam, "stock", Object.keys(STOCK_FILTERS));
   const flag = v.oneOf(req.query.flag, "flag", ["featured", "flash", "discounted"]);
   const sort = v.oneOf(req.query.sort, "sort", Object.keys(ADMIN_SORTS));
   const { limit, skip } = v.pagination(req.query, { defaultLimit: DEFAULT_LIMIT, maxLimit: MAX_LIMIT });
@@ -257,9 +290,7 @@ async function getAdminProducts(req, res) {
   else if (category) and.push(await categoryClause(String(category)));
   if (status === "active") and.push({ is_active: { $ne: false } });
   if (status === "inactive") and.push({ is_active: false });
-  if (stock === "in") and.push({ stock: { $gt: 0 } });
-  if (stock === "low") and.push({ stock: { $gt: 0, $lte: 5 } });
-  if (stock === "none") and.push({ $or: [{ stock: { $lte: 0 } }, { stock: null }] });
+  if (stock) and.push(STOCK_FILTERS[stock]);
   if (flag === "featured") and.push({ featured: true });
   if (flag === "flash") and.push({ flash_sale: true });
   if (flag === "discounted") and.push({ discount: { $gt: 0 } });

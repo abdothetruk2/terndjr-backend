@@ -35,8 +35,11 @@ const userSchema = new mongoose.Schema(
       default: "user",
     },
 
+    // Saved delivery address(es); the first one pre-fills checkout
     addresses: [
       {
+        fullName: String,
+        phone: String,
         street: String,
         city: String,
         country: String,
