@@ -1,0 +1,793 @@
+{
+   
+        "data": [
+            {
+                "id": 18797,
+                "slug": "td-jalila-126137",
+                "sku": "TD-JALILA-126137",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Halskette aus vergoldetem Edelstahl",
+                    "en": "Gold-plated stainless steel necklace",
+                    "ar": "قلادة من الفولاذ المطلي بالذهب"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl, Goldbeschichtung.\nKettenlänge: 40 + 5 cm.\nAnhängergröße: 2 × 2.8 cm.\nGewicht: 7 g.\nVerschluss: Karabinerverschluss.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel, gold plating.\nNecklace length: 40 + 5 cm.\nPendant size: 2 × 2.8 cm.\nWeight: 7 g.\nFastening: lobster clasp.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ, طلاء ذهبي.\nطول القلادة: 40 + 5 سم.\nحجم التعليقة: 2 × 2.8 سم.\nالوزن: 7 غرام.\nنوع الإغلاق: مشبك لوبستر.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "4.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/1c7af0fcba5a7d826d3afb71125fdef0505912b63d614de1362c2f8b31e1a024.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 126137,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:04.000000Z",
+                "updated_at": "2026-10-11T07:01:04.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18798,
+                "slug": "td-jalila-126142",
+                "sku": "TD-JALILA-126142",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Halskette aus vergoldetem Edelstahl",
+                    "en": "Gold-plated stainless steel necklace",
+                    "ar": "قلادة من الفولاذ المطلي بالذهب",
+                    "he": "",
+                    "fr": "",
+                    "tr": ""
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl, Goldbeschichtung.\r\nKettenlänge: 40 + 6 cm.\r\nGewicht: 18 g.\r\nVerschluss: Karabinerverschluss.\r\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\r\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel, gold plating.\r\nNecklace length: 40 + 6 cm.\r\nWeight: 18 g.\r\nFastening: lobster clasp.\r\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\r\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ, طلاء ذهبي.\r\nطول القلادة: 40 + 6 سم.\r\nالوزن: 18 غرام.\r\nنوع الإغلاق: مشبك لوبستر.\r\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\r\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية.",
+                    "he": "",
+                    "fr": "",
+                    "tr": ""
+                },
+                "price": "7.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/25bcbb5933d5297aa2d0f1101b0ae89f88547e701ea73620734760f43203d60f.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 126142,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:04.000000Z",
+                "updated_at": "2026-11-15T18:24:24.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18799,
+                "slug": "td-jalila-126147",
+                "sku": "TD-JALILA-126147",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Ohrringe aus vergoldetem Edelstahl",
+                    "en": "Gold-plated stainless steel earrings",
+                    "ar": "أقراط من الفولاذ المطلي بالذهب"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl, Goldbeschichtung.\nOhrringgröße: 1.2 × 1.2 cm.\nGewicht: 5 g.\nVerschluss: Steckverschluss.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel, gold plating.\nEarring size: 1.2 × 1.2 cm.\nWeight: 5 g.\nFastening: stud fastening.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ, طلاء ذهبي.\nمقاس الأقراط: 1.2 × 1.2 سم.\nالوزن: 5 غرام.\nنوع الإغلاق: إغلاق بدبوس.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "3.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/53f94f58002cadf4f57d10f3f740f6ec70fc66d29536129821c3379b94af4169.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 126147,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:04.000000Z",
+                "updated_at": "2026-10-11T07:01:04.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18800,
+                "slug": "td-jalila-126152",
+                "sku": "TD-JALILA-126152",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Ohrringe aus vergoldetem Edelstahl mit Zirkonia",
+                    "en": "Gold-plated stainless steel earrings with cubic zirconia",
+                    "ar": "أقراط من الفولاذ المطلي بالذهب مع زركون"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl, Goldbeschichtung.\nBesatz: Zirkonia.\nOhrringgröße: 2.7 × 1.4 cm.\nGewicht: 4 g.\nVerschluss: Creolenverschluss.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel, gold plating.\nStones: cubic zirconia.\nEarring size: 2.7 × 1.4 cm.\nWeight: 4 g.\nFastening: hoop clasp.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ, طلاء ذهبي.\nالأحجار: زركون مكعب.\nمقاس الأقراط: 2.7 × 1.4 سم.\nالوزن: 4 غرام.\nنوع الإغلاق: إغلاق دائري.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "6.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/1222c5bf7c7ade2d8430ca63e45c4d34ee5194208087d6ee51c0fab17594457a.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 126152,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:04.000000Z",
+                "updated_at": "2026-10-11T07:01:04.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18704,
+                "slug": "td-jalila-125660",
+                "sku": "TD-JALILA-125660",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Halskette aus vergoldetem Edelstahl mit Zirkonia",
+                    "en": "Gold-plated stainless steel necklace with cubic zirconia",
+                    "ar": "قلادة من الفولاذ المطلي بالذهب مع زركون"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl, Kupfer, Goldbeschichtung.\nBesatz: Zirkonia.\nKettenlänge: 43 + 5 cm.\nAnhängergröße: 2 × 1.8 cm.\nGewicht: 3 g.\nVerschluss: Karabinerverschluss.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel, copper, gold plating.\nStones: cubic zirconia.\nNecklace length: 43 + 5 cm.\nPendant size: 2 × 1.8 cm.\nWeight: 3 g.\nFastening: lobster clasp.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ, نحاس, طلاء ذهبي.\nالأحجار: زركون مكعب.\nطول القلادة: 43 + 5 سم.\nحجم التعليقة: 2 × 1.8 سم.\nالوزن: 3 غرام.\nنوع الإغلاق: مشبك لوبستر.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "4.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/538f85e46e180b971b6b216fb19bfcec170e2af026d50efb1402f5725e42f243.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 125660,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:03.000000Z",
+                "updated_at": "2026-10-11T07:01:03.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18705,
+                "slug": "td-jalila-125665",
+                "sku": "TD-JALILA-125665",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Ohrringe aus vergoldetem Edelstahl",
+                    "en": "Gold-plated stainless steel earrings",
+                    "ar": "أقراط من الفولاذ المطلي بالذهب"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl, Goldbeschichtung.\nOhrringgröße: 1 × 3 cm.\nGewicht: 3 g.\nVerschluss: Steckverschluss.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel, gold plating.\nEarring size: 1 × 3 cm.\nWeight: 3 g.\nFastening: stud fastening.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ, طلاء ذهبي.\nمقاس الأقراط: 1 × 3 سم.\nالوزن: 3 غرام.\nنوع الإغلاق: إغلاق بدبوس.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "2.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/defd6df59c7e8896add394964add5c5908d9ea711811ba38f3a0edec284df165.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 125665,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:03.000000Z",
+                "updated_at": "2026-10-11T07:01:03.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18706,
+                "slug": "td-jalila-125670",
+                "sku": "TD-JALILA-125670",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Verstellbarer Ring aus Edelstahl",
+                    "en": "Adjustable stainless steel ring",
+                    "ar": "خاتم من الفولاذ المقاوم للصدأ قابل للتعديل"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl.\nGewicht: 2 g.\nRinggröße: verstellbar.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel.\nWeight: 2 g.\nRing size: adjustable.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ.\nالوزن: 2 غرام.\nمقاس الخاتم: قابل للتعديل.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "2.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/e4f91c1201a154fe31ff2befa5456230e554906776b051dcc31e45def4b7152b.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 125670,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:03.000000Z",
+                "updated_at": "2026-10-11T07:01:03.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18707,
+                "slug": "td-jalila-125676",
+                "sku": "TD-JALILA-125676",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Halskette aus Edelstahl",
+                    "en": "Stainless steel necklace",
+                    "ar": "قلادة من الفولاذ المقاوم للصدأ"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl.\nKettenlänge: 39 + 5 cm.\nGewicht: 52 g.\nVerschluss: Karabinerverschluss.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel.\nNecklace length: 39 + 5 cm.\nWeight: 52 g.\nFastening: lobster clasp.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ.\nطول القلادة: 39 + 5 سم.\nالوزن: 52 غرام.\nنوع الإغلاق: مشبك لوبستر.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "4.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/0101a250bdcf631c4dc75153f21c5445ed9f275262fc81f2056731d6a05d82cc.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 125676,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:03.000000Z",
+                "updated_at": "2026-10-11T07:01:03.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18708,
+                "slug": "td-jalila-125680",
+                "sku": "TD-JALILA-125680",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Ohrringe aus Edelstahl mit Zirkonia",
+                    "en": "Stainless steel earrings with cubic zirconia",
+                    "ar": "أقراط من الفولاذ المقاوم للصدأ مع زركون"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl.\nBesatz: Zirkonia.\nOhrringgröße: 2.5 × 0.3 cm.\nGewicht: 3 g.\nVerschluss: Steckverschluss.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel.\nStones: cubic zirconia.\nEarring size: 2.5 × 0.3 cm.\nWeight: 3 g.\nFastening: stud fastening.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ.\nالأحجار: زركون مكعب.\nمقاس الأقراط: 2.5 × 0.3 سم.\nالوزن: 3 غرام.\nنوع الإغلاق: إغلاق بدبوس.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "4.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/9319aa3ae9b6ce9c89bfbba4b5700d52f019fa4f1cc1bbe9142dde29eee51af8.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 125680,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:03.000000Z",
+                "updated_at": "2026-10-11T07:01:03.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18709,
+                "slug": "td-jalila-125685",
+                "sku": "TD-JALILA-125685",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Ohrringe aus vergoldetem Edelstahl",
+                    "en": "Gold-plated stainless steel earrings",
+                    "ar": "أقراط من الفولاذ المطلي بالذهب"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl, Goldbeschichtung.\nOhrringgröße: 0.8 × 2.4 cm.\nGewicht: 4 g.\nVerschluss: Creolenverschluss.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel, gold plating.\nEarring size: 0.8 × 2.4 cm.\nWeight: 4 g.\nFastening: hoop clasp.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ, طلاء ذهبي.\nمقاس الأقراط: 0.8 × 2.4 سم.\nالوزن: 4 غرام.\nنوع الإغلاق: إغلاق دائري.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "3.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/836d7e10f3ebe99087d21b6e0d44f6f88c348443f55d2e3e6a8ea0d95702438e.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 125685,
+                    "duplicate_source_ids": [
+                        125731
+                    ],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:03.000000Z",
+                "updated_at": "2026-10-11T07:01:03.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18710,
+                "slug": "td-jalila-125695",
+                "sku": "TD-JALILA-125695",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Armband aus vergoldetem Edelstahl",
+                    "en": "Gold-plated stainless steel bracelet",
+                    "ar": "سوار من الفولاذ المطلي بالذهب"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl, Goldbeschichtung.\nArmbanddurchmesser: 5.5 cm.\nArmbandbreite: 2 cm.\nGewicht: 12 g.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel, gold plating.\nBracelet diameter: 5.5 cm.\nBracelet width: 2 cm.\nWeight: 12 g.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ, طلاء ذهبي.\nقطر السوار: 5.5 سم.\nعرض السوار: 2 سم.\nالوزن: 12 غرام.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "5.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/cff4d549696a9c956b8e40e22c5bc352a4607922f07d9d8de1b7364afca8ae3a.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 125695,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:03.000000Z",
+                "updated_at": "2026-10-11T07:01:03.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18711,
+                "slug": "td-jalila-125700",
+                "sku": "TD-JALILA-125700",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Armband aus vergoldetem Edelstahl mit Kunstperlen",
+                    "en": "Gold-plated stainless steel bracelet with imitation pearls",
+                    "ar": "سوار من الفولاذ المطلي بالذهب مع لؤلؤ صناعي"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl, Goldbeschichtung, Kunstperlen.\nArmbandlänge: 18 + 6 cm.\nArmbandbreite: 0.4 cm.\nGewicht: 6 g.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel, gold plating, imitation pearls.\nBracelet length: 18 + 6 cm.\nBracelet width: 0.4 cm.\nWeight: 6 g.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ, طلاء ذهبي, لؤلؤ صناعي.\nطول السوار: 18 + 6 سم.\nعرض السوار: 0.4 سم.\nالوزن: 6 غرام.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "3.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/bd8f3212931651c81839409d2afe9adfec8be6a5a882132226a6e2c3cae5c12f.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 125700,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:03.000000Z",
+                "updated_at": "2026-10-11T07:01:03.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18712,
+                "slug": "td-jalila-125704",
+                "sku": "TD-JALILA-125704",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Armband aus vergoldetem Edelstahl mit Zirkonia",
+                    "en": "Gold-plated stainless steel bracelet with cubic zirconia",
+                    "ar": "سوار من الفولاذ المطلي بالذهب مع زركون"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl, Goldbeschichtung.\nBesatz: Zirkonia.\nArmbandlänge: 17 + 5.5 cm.\nArmbandbreite: 0.2 cm.\nGewicht: 3 g.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel, gold plating.\nStones: cubic zirconia.\nBracelet length: 17 + 5.5 cm.\nBracelet width: 0.2 cm.\nWeight: 3 g.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ, طلاء ذهبي.\nالأحجار: زركون مكعب.\nطول السوار: 17 + 5.5 سم.\nعرض السوار: 0.2 سم.\nالوزن: 3 غرام.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "5.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/9cd6be9ecd8d4443b0cffc0ea7438dd13a38092cdf3a57e56c374699692edeee.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 125704,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:03.000000Z",
+                "updated_at": "2026-10-11T07:01:03.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18713,
+                "slug": "td-jalila-125709",
+                "sku": "TD-JALILA-125709",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Armband aus vergoldetem Edelstahl",
+                    "en": "Gold-plated stainless steel bracelet",
+                    "ar": "سوار من الفولاذ المطلي بالذهب"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl, Goldbeschichtung.\nArmbanddurchmesser: 5.5 cm.\nArmbandbreite: 0.7 cm.\nGewicht: 6 g.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel, gold plating.\nBracelet diameter: 5.5 cm.\nBracelet width: 0.7 cm.\nWeight: 6 g.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ, طلاء ذهبي.\nقطر السوار: 5.5 سم.\nعرض السوار: 0.7 سم.\nالوزن: 6 غرام.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "5.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/ec061eb17555953aa58a68b3a3f58ac16b992bf178a9c57dae4a5f77c5dde5ed.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 125709,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:03.000000Z",
+                "updated_at": "2026-10-11T07:01:03.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18714,
+                "slug": "td-jalila-125714",
+                "sku": "TD-JALILA-125714",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Verstellbarer Ring aus vergoldetem Edelstahl",
+                    "en": "Adjustable gold-plated stainless steel ring",
+                    "ar": "خاتم من الفولاذ المطلي بالذهب قابل للتعديل"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl, Goldbeschichtung.\nGewicht: 4 g.\nRinggröße: verstellbar.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel, gold plating.\nWeight: 4 g.\nRing size: adjustable.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ, طلاء ذهبي.\nالوزن: 4 غرام.\nمقاس الخاتم: قابل للتعديل.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "3.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/675a147bdc2fc1e0247da2ff6c5212cea4fb7820dc5c6d61250441feeda6bd5a.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 125714,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:03.000000Z",
+                "updated_at": "2026-10-11T07:01:03.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18715,
+                "slug": "td-jalila-125721",
+                "sku": "TD-JALILA-125721",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Ohrringe aus vergoldetem Edelstahl",
+                    "en": "Gold-plated stainless steel earrings",
+                    "ar": "أقراط من الفولاذ المطلي بالذهب"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl, Goldbeschichtung.\nOhrringgröße: 5 × 5 cm.\nGewicht: 9 g.\nVerschluss: Steckverschluss.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel, gold plating.\nEarring size: 5 × 5 cm.\nWeight: 9 g.\nFastening: stud fastening.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ, طلاء ذهبي.\nمقاس الأقراط: 5 × 5 سم.\nالوزن: 9 غرام.\nنوع الإغلاق: إغلاق بدبوس.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "5.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/4138703914127b5de44c763365ac2ac6038b609941686983b64d03a3466f73a6.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 125721,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:03.000000Z",
+                "updated_at": "2026-10-11T07:01:03.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18716,
+                "slug": "td-jalila-125726",
+                "sku": "TD-JALILA-125726",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Halskette aus vergoldetem Edelstahl",
+                    "en": "Gold-plated stainless steel necklace",
+                    "ar": "قلادة من الفولاذ المطلي بالذهب"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl, Goldbeschichtung.\nKettenlänge: 39.5 + 5 cm.\nGewicht: 12 g.\nVerschluss: Karabinerverschluss.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel, gold plating.\nNecklace length: 39.5 + 5 cm.\nWeight: 12 g.\nFastening: lobster clasp.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ, طلاء ذهبي.\nطول القلادة: 39.5 + 5 سم.\nالوزن: 12 غرام.\nنوع الإغلاق: مشبك لوبستر.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "3.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/3a8f4406eedcd73223743db4d2ecd433166cb0309fbf65a078469f3e67892fb0.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 125726,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:03.000000Z",
+                "updated_at": "2026-10-11T07:01:03.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18717,
+                "slug": "td-jalila-125735",
+                "sku": "TD-JALILA-125735",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Ring aus vergoldetem Edelstahl",
+                    "en": "Gold-plated stainless steel ring",
+                    "ar": "خاتم من الفولاذ المطلي بالذهب"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl, Goldbeschichtung.\nGewicht: 3 g.\nRinggröße: feste Größe; bitte vor dem Kauf prüfen.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel, gold plating.\nWeight: 3 g.\nRing size: fixed size; check the size before purchasing.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ, طلاء ذهبي.\nالوزن: 3 غرام.\nالخاتم بمقاس محدد؛ يرجى التأكد من المقاس قبل الشراء.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "3.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/d607fdbcf1201b17dac018184492e0917d80ca494f4ee64704e214fc17612cf9.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 125735,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:03.000000Z",
+                "updated_at": "2026-10-11T07:01:03.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18718,
+                "slug": "td-jalila-125740",
+                "sku": "TD-JALILA-125740",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Armband aus vergoldetem Edelstahl",
+                    "en": "Gold-plated stainless steel bracelet",
+                    "ar": "سوار من الفولاذ المطلي بالذهب"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl, Goldbeschichtung.\nArmbandlänge: 18 + 5 cm.\nArmbandbreite: 0.8 cm.\nGewicht: 18 g.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel, gold plating.\nBracelet length: 18 + 5 cm.\nBracelet width: 0.8 cm.\nWeight: 18 g.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ, طلاء ذهبي.\nطول السوار: 18 + 5 سم.\nعرض السوار: 0.8 سم.\nالوزن: 18 غرام.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "4.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/7334582551cfd106b61094640b6ff9f168c3dd3c505868f713b4a430274cb252.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 125740,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:03.000000Z",
+                "updated_at": "2026-10-11T07:01:03.000000Z",
+                "is_active": true
+            },
+            {
+                "id": 18719,
+                "slug": "td-jalila-125745",
+                "sku": "TD-JALILA-125745",
+                "brand": "TRENDORA Jewelry",
+                "name": {
+                    "de": "Ohrringe aus vergoldetem Edelstahl",
+                    "en": "Gold-plated stainless steel earrings",
+                    "ar": "أقراط من الفولاذ المطلي بالذهب"
+                },
+                "description": {
+                    "de": "Materialien laut Anbieter: Edelstahl, Goldbeschichtung.\nOhrringgröße: 6 × 1 cm.\nGewicht: 4 g.\nVerschluss: Steckverschluss.\nDie Angaben zu Wasserbeständigkeit, Farbbeständigkeit und Hautverträglichkeit stammen vom Anbieter und wurden nicht unabhängig geprüft.\nPflege: mit einem weichen Tuch reinigen. Kontakt mit Parfüm und aggressiven Reinigungsmitteln vermeiden.",
+                    "en": "Materials as described by the supplier: stainless steel, gold plating.\nEarring size: 6 × 1 cm.\nWeight: 4 g.\nFastening: stud fastening.\nClaims about water resistance, tarnish resistance and skin compatibility come from the supplier and have not been independently verified.\nCare: clean with a soft cloth. Avoid contact with perfume and harsh cleaning products.",
+                    "ar": "الخامات بحسب وصف المورد: فولاذ مقاوم للصدأ, طلاء ذهبي.\nمقاس الأقراط: 6 × 1 سم.\nالوزن: 4 غرام.\nنوع الإغلاق: إغلاق بدبوس.\nمعلومات مقاومة الماء وتغير اللون وملاءمة البشرة واردة في وصف المورد ولم تُختبر بشكل مستقل.\nالعناية: تنظيف بقطعة قماش ناعمة وتجنب العطور والمنظفات القوية."
+                },
+                "price": "4.99",
+                "old_price": null,
+                "discount": 0,
+                "rating": "0.0",
+                "reviews_count": 0,
+                "stock": 0,
+                "image": "media/jalila/53ad889e21f25dc0519f93c703687a8fb685e5567ece6e7cd8e47415fadc4ba4.jpg",
+                "tags": {
+                    "source_type": "telegram-jewelry",
+                    "import_batch": "jalila-20261011",
+                    "source_id": 125745,
+                    "duplicate_source_ids": [],
+                    "price_status": "confirmed",
+                    "stock_status": "not-specified",
+                    "specification_source": "source-description",
+                    "import_issues": []
+                },
+                "featured": false,
+                "flash_sale": false,
+                "reward_points": 0,
+                "created_at": "2026-10-11T07:01:03.000000Z",
+                "updated_at": "2026-10-11T07:01:03.000000Z",
+                "is_active": true
+            }
+        ]
+    }
