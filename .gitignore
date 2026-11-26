@@ -1,8 +1,30 @@
+# Dependencies
 node_modules/
+
+# Build files
+dist/
+build/
+
+# Environment variables
 .env
 .env.*
 !.env.example
+
+# Archives and large files
+*.zip
+*.rar
+*.7z
+
+# Logs
 npm-debug.log*
+*.log
+
+# Operating system
 .DS_Store
+
+# Testing
 coverage/
-dist/
+
+# Temporary files
+*.tmp
+*.temp
