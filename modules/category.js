@@ -46,8 +46,9 @@ const categorySchema = new mongoose.Schema({
         type: String
     },
 
+    // Localized text { en, de, ar } (older categories may hold a plain string)
     description: {
-        type: String
+        type: mongoose.Schema.Types.Mixed
     },
 
     // Imported categories use `is_active`, ones created through the API use `isActive`.

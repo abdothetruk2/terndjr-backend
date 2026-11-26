@@ -1,9 +1,13 @@
 const mongoose = require("mongoose");
 
+// One text per store language. Other keys already in the database (e.g. he, tr
+// from the import) are left untouched.
 const localizedText = {
   de: String,
   en: String,
   ar: String,
+  fr: String,
+  es: String,
 };
 
 const productSchema = new mongoose.Schema(
@@ -20,6 +24,12 @@ const productSchema = new mongoose.Schema(
     name: localizedText,
 
     description: localizedText,
+
+    // Optional search-engine texts per language (the name / description are used when empty)
+    seo: {
+      title: localizedText,
+      description: localizedText,
+    },
 
     // Stored as strings to match the imported data (e.g. "4.99")
     price: { type: String, required: true },

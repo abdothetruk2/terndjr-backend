@@ -16,7 +16,41 @@ const SHIPPING_FEE = 0; // the store promises free shipping on every order
 const PHONE_PATTERN = /^[+\d][\d\s()./-]{3,29}$/;
 
 const round2 = (n) => Math.round(n * 100) / 100;
-const englishName = (name) => (typeof name === "string" ? name : name?.en || "This product");
+const { localizedText } = require("../utils/lang");
+const { BASE_CURRENCY, isSupportedCurrency } = require("../config/currency");
+const { rateFor, convertAmount, getPublicRates } = require("../utils/exchangeRates");
+
+// The quote in the customer's display currency, computed here from the server's own
+// exchange rate (never from amounts sent by the browser). Each unit price is converted
+// and rounded first, so line totals and the order total add up exactly.
+// Returns null for the base currency or when no rate is available (base amounts apply).
+async function displayAmounts(quote, currency) {
+  const code = typeof currency === "string" ? currency.trim().toUpperCase() : "";
+  if (!code || code === BASE_CURRENCY || !isSupportedCurrency(code)) return null;
+  const rate = await rateFor(code);
+  if (!rate) return null;
+  const conv = (amount) => convertAmount(amount, rate, code);
+  const items = quote.lines.map((line) => {
+    const price = conv(line.price);
+    return { product: line.product?.id ?? line.ref, price, subtotal: line.available ? Math.round(price * line.quantity * 1e6) / 1e6 : 0 };
+  });
+  const subtotal = Math.round(items.reduce((sum, item) => sum + item.subtotal, 0) * 1e6) / 1e6;
+  const shippingFee = conv(quote.shippingFee);
+  const discount = Math.min(conv(quote.discount), subtotal);
+  const { updatedAt } = await getPublicRates();
+  return {
+    code,
+    rate,
+    ratesUpdatedAt: updatedAt,
+    items,
+    subtotal,
+    shippingFee,
+    discount,
+    total: Math.max(0, Math.round((subtotal + shippingFee - discount) * 1e6) / 1e6),
+  };
+}
+// The product name in the shopper's language (Accept-Language), English as fallback
+const englishName = (name) => localizedText(name) || "This product";
 
 async function findOrderOr404(id) {
   if (!mongoose.isValidObjectId(id)) throw httpError(400, "Invalid order id");
@@ -287,9 +321,12 @@ function quoteLineJSON(line) {
 // Body: { items: [{ product, quantity }], couponCode? } -> server prices, stock and totals.
 // Nothing is reserved; the checkout page shows this before the order is placed.
 async function quoteOrder(req, res) {
-  const { items, couponCode } = req.body ?? {};
+  const { items, couponCode, currency } = req.body ?? {};
   const quote = await buildQuote(items, couponCode);
+  const display = await displayAmounts(quote, currency);
   res.json({
+    currency: BASE_CURRENCY, // the amounts below
+    display, // the same quote in the customer's currency (null = base currency)
     items: quote.lines.map(quoteLineJSON),
     subtotal: quote.subtotal,
     shippingFee: quote.shippingFee,
@@ -308,7 +345,7 @@ async function quoteOrder(req, res) {
 // Body: { items: [{ product: <numeric id or _id>, quantity }], shippingAddress, paymentMethod?, notes?, couponCode? }
 // Prices, stock and the coupon discount are always checked here, never taken from the client.
 async function createOrder(req, res) {
-  const { items, shippingAddress, paymentMethod, notes, couponCode } = req.body ?? {};
+  const { items, shippingAddress, paymentMethod, notes, couponCode, currency } = req.body ?? {};
 
   const address = cleanShippingAddress(shippingAddress);
   if (paymentMethod !== undefined && paymentMethod !== "cash") {
@@ -322,6 +359,7 @@ async function createOrder(req, res) {
     throw httpError(first.code === "stock" ? 409 : 400, first.message);
   }
   if (quote.couponError) throw httpError(400, quote.couponError);
+  const display = await displayAmounts(quote, currency);
 
   await reserveStock(quote.lines);
   let coupon = null;
@@ -349,6 +387,17 @@ async function createOrder(req, res) {
       discount: quote.discount,
       coupon: coupon ? { code: coupon.code, type: coupon.type, value: coupon.value } : undefined,
       totalPrice: quote.total,
+      currency: display
+        ? {
+          code: display.code,
+          rate: display.rate,
+          ratesUpdatedAt: display.ratesUpdatedAt,
+          subtotal: display.subtotal,
+          shippingFee: display.shippingFee,
+          discount: display.discount,
+          total: display.total,
+        }
+        : undefined,
     });
     res.status(201).json(order);
   } catch (err) {

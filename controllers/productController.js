@@ -29,7 +29,7 @@ const ADMIN_SORTS = {
   "id-desc": { id: -1 },
   "id-asc": { id: 1 },
   updated: { updated_at: -1, id: -1 },
-  "name-asc": { "name.en": 1, id: 1 },
+  "name-asc": { "name.en": 1, id: 1 }, // replaced per request language in getAdminProducts
   "stock-asc": { stock: 1, id: 1 },
   "stock-desc": { stock: -1, id: 1 },
   "sold-desc": { sold_count: -1, id: -1 },
@@ -72,6 +72,15 @@ async function categoryClause(value) {
     ],
   };
 }
+
+// ?translation= on the admin list: products whose name is missing in a language
+const TRANSLATED_LANGUAGES = ["de", "ar", "fr", "es"];
+const missingIn = (lang) => ({ $or: [{ [`name.${lang}`]: { $exists: false } }, { [`name.${lang}`]: { $in: [null, ""] } }] });
+const TRANSLATION_FILTERS = {
+  missing: { $or: TRANSLATED_LANGUAGES.map(missingIn) },
+  ...Object.fromEntries(TRANSLATED_LANGUAGES.map((lang) => [`missing-${lang}`, missingIn(lang)])),
+  complete: Object.fromEntries(TRANSLATED_LANGUAGES.map((lang) => [`name.${lang}`, { $nin: [null, ""] }])),
+};
 
 const NO_CATEGORY_CLAUSE = {
   category: { $in: [null, ""] },
@@ -143,6 +152,15 @@ async function cleanProductInput(body, { partial }) {
   if (name) out.name = name;
   const description = v.localized(body.description, "description", { max: 5000 });
   if (description) out.description = description;
+  if (body.seo !== undefined && body.seo !== null) {
+    if (!v.isPlainObject(body.seo)) throw httpError(400, "seo must be an object like { title, description }");
+    const seo = {};
+    const title = v.localized(body.seo.title, "seo.title", { max: 120 });
+    if (title) seo.title = title;
+    const metaDescription = v.localized(body.seo.description, "seo.description", { max: 300 });
+    if (metaDescription) seo.description = metaDescription;
+    if (Object.keys(seo).length) out.seo = seo;
+  }
 
   if (body.slug !== undefined && body.slug !== null && body.slug !== "") out.slug = v.slug(body.slug);
   if (body.sku !== undefined) out.sku = v.text(body.sku, "sku", { max: 64, allowEmpty: true }) ?? "";
@@ -219,8 +237,9 @@ async function getAllProducts(req, res) {
   if (brand) filter.brand = String(brand);
   if (featured !== undefined) filter.featured = featured === "true";
   if (search) {
-    const rx = new RegExp(v.escapeRegex(String(search)), "i");
-    filter.$or = [{ "name.en": rx }, { "name.de": rx }, { "name.ar": rx }, { brand: rx }];
+    // Names in every language, so a German or Arabic word finds the product too
+    const rx = new RegExp(v.escapeRegex(String(search).trim()), "i");
+    filter.$or = [...v.STORE_LANGUAGES.map((lang) => ({ [`name.${lang}`]: rx })), { brand: rx }];
   }
   if (category) filter.$and = [await categoryClause(String(category))];
   if (discounted === "true") filter.discount = { $gt: 0 };
@@ -275,6 +294,7 @@ async function getAdminProducts(req, res) {
   const stockParam = req.query.stock === "none" ? "out" : req.query.stock;
   const stock = v.oneOf(stockParam, "stock", Object.keys(STOCK_FILTERS));
   const flag = v.oneOf(req.query.flag, "flag", ["featured", "flash", "discounted"]);
+  const translation = v.oneOf(req.query.translation, "translation", Object.keys(TRANSLATION_FILTERS));
   const sort = v.oneOf(req.query.sort, "sort", Object.keys(ADMIN_SORTS));
   const { limit, skip } = v.pagination(req.query, { defaultLimit: DEFAULT_LIMIT, maxLimit: MAX_LIMIT });
 
@@ -282,7 +302,7 @@ async function getAdminProducts(req, res) {
   const term = typeof search === "string" ? search.trim() : "";
   if (term) {
     const rx = new RegExp(v.escapeRegex(term), "i");
-    const or = [{ "name.en": rx }, { "name.de": rx }, { "name.ar": rx }, { brand: rx }, { sku: rx }, { slug: rx }];
+    const or = [...v.STORE_LANGUAGES.map((lang) => ({ [`name.${lang}`]: rx })), { brand: rx }, { sku: rx }, { slug: rx }];
     if (/^\d+$/.test(term)) or.push({ id: Number(term) });
     and.push({ $or: or });
   }
@@ -294,14 +314,17 @@ async function getAdminProducts(req, res) {
   if (flag === "featured") and.push({ featured: true });
   if (flag === "flash") and.push({ flash_sale: true });
   if (flag === "discounted") and.push({ discount: { $gt: 0 } });
+  if (translation) and.push(TRANSLATION_FILTERS[translation]);
 
   const filter = and.length ? { $and: and } : {};
+  // "Name A–Z" in the admin's language (English for products without that translation)
+  const sortSpec = sort === "name-asc" ? { [`name.${req.lang || "en"}`]: 1, "name.en": 1, id: 1 } : null;
   const [[count], docs] = await Promise.all([
     Product.aggregate([{ $match: filter }, { $count: "total" }]),
     Product.aggregate([
       { $match: filter },
       { $addFields: { _price: asNumber("$price"), _rating: asNumber("$rating") } },
-      { $sort: ADMIN_SORTS[sort] || ADMIN_SORTS["id-desc"] },
+      { $sort: sortSpec || ADMIN_SORTS[sort] || ADMIN_SORTS["id-desc"] },
       { $skip: skip },
       { $limit: limit },
       { $project: { _price: 0, _rating: 0 } },
@@ -354,6 +377,10 @@ async function updateProduct(req, res) {
     if (key === "name" || key === "description") {
       // Only the languages that were sent; other translations stay untouched
       for (const [lang, translated] of Object.entries(value)) $set[`${key}.${lang}`] = translated;
+    } else if (key === "seo") {
+      for (const [field, texts] of Object.entries(value)) {
+        for (const [lang, translated] of Object.entries(texts)) $set[`seo.${field}.${lang}`] = translated;
+      }
     } else if ((key === "sku" || key === "category") && !value) {
       $unset[key] = "";
     } else {

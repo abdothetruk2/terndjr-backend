@@ -90,17 +90,19 @@ function slug(value, field = "slug", { required = false } = {}) {
   return lower;
 }
 
-// Localized text: a plain string (treated as English) or { en, de, ar }.
+// Localized text: a plain string (treated as English) or { en, de, ar, fr, es }.
 // Returns only the languages that were sent: { en: "...", de: "" } etc.
 // requireEn: English must be present and non-empty (create).
 // nonEmptyEn: English may be omitted, but if it is sent it can't be empty (update).
-function localized(value, field, { languages = ["en", "de", "ar"], requireEn = false, nonEmptyEn = false, max = 200 } = {}) {
+const STORE_LANGUAGES = ["en", "de", "ar", "fr", "es"];
+
+function localized(value, field, { languages = STORE_LANGUAGES, requireEn = false, nonEmptyEn = false, max = 200 } = {}) {
   if (value === undefined) {
     if (requireEn) throw httpError(400, `${field} (English) is required`);
     return undefined;
   }
   if (typeof value === "string") value = { en: value };
-  if (!isPlainObject(value)) throw httpError(400, `${field} must be text or an object like { en, de, ar }`);
+  if (!isPlainObject(value)) throw httpError(400, `${field} must be text or an object like { en, de, ar, fr, es }`);
 
   const out = {};
   for (const lang of languages) {
@@ -136,6 +138,7 @@ module.exports = {
   oneOf,
   slug,
   localized,
+  STORE_LANGUAGES,
   objectId,
   pagination,
 };

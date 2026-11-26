@@ -6,6 +6,8 @@ const { getAdminCategories } = require("../controllers/categoryController");
 const { listCustomers, getCustomer, updateCustomer } = require("../controllers/customerController");
 const { listSubscribers, deleteSubscriber } = require("../controllers/newsletterController");
 const { uploadImage, IMAGE_TYPES, MAX_BYTES } = require("../controllers/uploadController");
+const { translate, translationStatus } = require("../controllers/translateController");
+const { refreshRates } = require("../controllers/currencyController");
 
 const router = express.Router();
 
@@ -24,6 +26,13 @@ router.get("/categories", getAdminCategories);
 router.get("/customers", listCustomers);
 router.get("/customers/:id", getCustomer);
 router.patch("/customers/:id", updateCustomer);
+
+// Optional AI translation of product/category texts (suggestions only, nothing is saved)
+router.get("/translate/status", translationStatus);
+router.post("/translate", translate);
+
+// Fetch fresh exchange rates now (they also refresh by themselves)
+router.post("/currency/refresh", refreshRates);
 
 router.get("/subscribers", listSubscribers);
 router.delete("/subscribers/:id", deleteSubscriber);

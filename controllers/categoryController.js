@@ -42,8 +42,12 @@ async function cleanCategoryInput(body, { partial, current = null }) {
     }
   }
 
-  if (body.description !== undefined) {
-    out.description = v.text(body.description, "description", { max: 1000, allowEmpty: true }) ?? "";
+  // Localized texts ({ en, de, ar } or a plain string = English)
+  if (body.description !== undefined && body.description !== null) {
+    out.description = v.localized(body.description, "description", { max: 1000 });
+  }
+  if (body.subtitle !== undefined && body.subtitle !== null) {
+    out.subtitle = v.localized(body.subtitle, "subtitle", { max: 200 });
   }
   if (body.image !== undefined) {
     const image = v.text(body.image, "image", { max: 1000, allowEmpty: true }) ?? "";
@@ -143,7 +147,10 @@ async function createCategory(req, res) {
   const data = await cleanCategoryInput(req.body, { partial: false });
 
   // Store only the languages that were filled in
-  data.name = Object.fromEntries(Object.entries(data.name).filter(([, value]) => value));
+  const filled = (obj) => Object.fromEntries(Object.entries(obj || {}).filter(([, value]) => value));
+  data.name = filled(data.name);
+  if (data.description) data.description = filled(data.description);
+  if (data.subtitle) data.subtitle = filled(data.subtitle);
   if (!data.slug) {
     data.slug = v.slugify(data.name.en);
     if (!data.slug) throw httpError(400, "slug is required");
@@ -180,6 +187,18 @@ async function updateCategory(req, res) {
     }
     if (!merged.en) merged.en = englishName(current.name);
     $set.name = merged;
+  }
+  // Description / subtitle: merge the sent languages into the stored ones
+  // (an empty text removes that language; a plain stored string counts as English)
+  for (const key of ["description", "subtitle"]) {
+    if (!data[key]) continue;
+    const stored = current[key];
+    const merged = typeof stored === "string" ? (stored ? { en: stored } : {}) : { ...(stored || {}) };
+    for (const [lang, value] of Object.entries(data[key])) {
+      if (value) merged[lang] = value;
+      else delete merged[lang];
+    }
+    $set[key] = merged;
   }
   if ("isActive" in data) $set.is_active = data.isActive; // keep both flags in sync
 

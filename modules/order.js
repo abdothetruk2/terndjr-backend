@@ -97,6 +97,18 @@ const orderSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  // The currency the customer saw at checkout (all amounts above stay in the
+  // store's base currency). Converted by the server with its own exchange rate;
+  // missing on orders placed before multi-currency, which are in the base currency.
+  currency: {
+    code: String,
+    rate: Number, // 1 base unit in `code`
+    ratesUpdatedAt: Date,
+    subtotal: Number,
+    shippingFee: Number,
+    discount: Number,
+    total: Number
+  },
 
   // Payment
   paymentMethod: {

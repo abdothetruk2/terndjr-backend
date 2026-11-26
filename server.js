@@ -10,7 +10,9 @@ const categoryRoutes = require("./router/category");
 const couponRoutes = require("./router/coupon");
 const adminRoutes = require("./router/admin");
 const newsletterRoutes = require("./router/newsletter");
+const currencyRoutes = require("./router/currency");
 const { UPLOAD_DIR } = require("./controllers/uploadController");
+const { languageMiddleware } = require("./utils/lang");
 const cors = require("cors");
 const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/trendjr";
@@ -42,6 +44,7 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(languageMiddleware); // req.lang: en | de | ar (Accept-Language)
 
 // Routes
 
@@ -52,6 +55,7 @@ app.use("/api/categories", categoryRoutes);
 app.use("/api/coupons", couponRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/newsletter", newsletterRoutes);
+app.use("/api/currency", currencyRoutes);
 
 // Images uploaded from the admin dashboard (POST /api/admin/uploads)
 app.use("/uploads", express.static(UPLOAD_DIR, {
@@ -84,7 +88,7 @@ app.use((err, req, res, next) => {
   if (err.type === "entity.too.large") message = "The upload is too large (max 5 MB)";
   if (err.type === "entity.parse.failed") message = "The request body is not valid JSON";
 
-  if (status >= 500) {
+  if (status >= 500 && !err.expose) {
     console.error(err);
     message = "Server error"; // never send internal details to the client
   }
